@@ -22,10 +22,10 @@ export default class Camera {
         camera.video.srcObject = stream
 
         // only for debug
-        // camera.video.height = 240
-        // camera.video.width = 320
-        // document.body.appendChild(camera.video)
-        // camera.video.style = "transform: scaleX(-1)"
+        camera.video.height = 240
+        camera.video.width = 320
+        document.body.appendChild(camera.video)
+        camera.video.style = "transform: scaleX(-1)"
 
         await new Promise((resolve) => {
             camera.video.onloadeddata = () => {
