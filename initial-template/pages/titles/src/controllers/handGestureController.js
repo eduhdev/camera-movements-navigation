@@ -3,7 +3,7 @@ import { prepareRunChecker } from "../../../../lib/shared/util.js";
 const PIXELS_PER_SCROLL = 150;
 
 const { shouldRun: scrollShouldRun } = prepareRunChecker({ timerDelay: 200 });
-const { shouldRun: clickShouldRun } = prepareRunChecker({ timerDelay: 1000 });
+const { shouldRun: clickShouldRun } = prepareRunChecker({ timerDelay: 600 });
 export default class HandGestureController {
   #view;
   #service;
