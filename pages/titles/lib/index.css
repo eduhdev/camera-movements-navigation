@@ -1200,3 +1200,11 @@ a {
   /* fica à frente dos elementos */
   z-index: 15;
 }
+
+#camera {
+  position: fixed;
+  z-index: 16;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
