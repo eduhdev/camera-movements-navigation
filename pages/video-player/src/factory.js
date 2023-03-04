@@ -38,20 +38,21 @@ async function getWorker() {
     onmessage(msg) {},
   };
 
-  console.log("loading tf model")
-  await service.loadModel()
-  console.log("loaded tf model")
+  console.log("loading tf model");
+  await service.loadModel();
+  console.log("loaded tf model");
 
-  setTimeout(() => worker.onmessage({ data: 'READY' }),200)
+  setTimeout(() => worker.onmessage({ data: "READY" }), 200);
 
   return workerMock;
 }
 
+const view = new View();
+const [rootPath] = window.location.href.split("/pages/");
+view.setVideoSrc(`${rootPath}/assets/video.mp4`);
+
 const worker = await getWorker();
-
 const camera = await Camera.init();
-
-const [rootPath] = window.location.href.split('/pages/')
 
 const factory = {
   async initalize() {
@@ -60,7 +61,6 @@ const factory = {
       view: new View(),
       service: new Service({}),
       worker: worker,
-      videoUrl: `${rootPath}/assets/video.mp4`
     });
   },
 };
